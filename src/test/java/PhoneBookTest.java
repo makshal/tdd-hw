@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,12 +13,9 @@ public class PhoneBookTest {
         phoneBook = new PhoneBook();
     }
 
-    @Test
+    @Test()
+    @DisplayName("Если имя отличается, номер добавляется")
     void addNumberTestOne() {
-
-        Map<String, Integer> number = Map.of("Маша", 232_013,
-                "Влад", 232_021,
-                "Макс", 232_732);
 
         int result = phoneBook.addNumber("Олег", 232_032);
 
@@ -29,11 +24,8 @@ public class PhoneBookTest {
     }
 
     @Test
+    @DisplayName("Если имя присутствует, номер не добавляется")
     void addNumberTestTwo() {
-
-        Map<String, Integer> number = Map.of("Маша", 232_013,
-                "Влад", 232_021,
-                "Макс", 232_732);
 
         int result = phoneBook.addNumber("Макс", 232_032);
 
