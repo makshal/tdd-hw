@@ -51,7 +51,7 @@ public class PhoneBookTest {
             phoneBook.findByNumber(232_232);
         });
 
-        assertEquals("Контакт с номером 232_232 не найден", exception.getMessage());
+        assertEquals("Контакт с номером 232232 не найден", exception.getMessage());
 
     }
 
