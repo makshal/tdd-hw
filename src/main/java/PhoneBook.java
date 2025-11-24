@@ -3,21 +3,41 @@ import java.util.Map;
 
 public class PhoneBook {
 
-    private Map<String, Integer> phoneBookMap = new HashMap<>();
+    private Map<String, Integer> nameToNumber = new HashMap<>();
+    private Map<Integer, String> numberToName = new HashMap<>();
 
     public PhoneBook() {
-        phoneBookMap.put("Маша", 232_013);
-        phoneBookMap.put("Влад", 232_021);
-        phoneBookMap.put("Макс", 232_732);
+
+        nameToNumber.put("Маша", 232_013);
+        nameToNumber.put("Влад", 232_021);
+        nameToNumber.put("Макс", 232_732);
+
+        numberToName.put(232_013, "Маша");
+        numberToName.put(232_021, "Влад");
+        numberToName.put(232_732, "Макс");
+
     }
 
     public int addNumber(String name, int number) {
 
-        if (!phoneBookMap.containsKey(name)) {
-            phoneBookMap.put(name, number);
+        if (!nameToNumber.containsKey(name)) {
+            nameToNumber.put(name, number);
+            numberToName.put(number, name);
         }
 
-        return phoneBookMap.size();
+        return nameToNumber.size();
+
+    }
+
+    public String findByNumber(int number) {
+
+//        if (!numberToName.containsKey(number)) {
+//            throw new IllegalArgumentException("Контакт с номером " + number + " не найден");
+//        }
+//
+//        return numberToName.get(number);
+
+        return null;
 
     }
 
