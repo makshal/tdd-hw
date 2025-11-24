@@ -55,4 +55,25 @@ public class PhoneBookTest {
 
     }
 
+    @Test
+    void findByNameOne() {
+
+        int result = phoneBook.findByName("Макс");
+
+        assertEquals(232_732, result, "Контакт с таким именем есть");
+
+    }
+
+
+    @Test
+    void findByNameTwo() {
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            phoneBook.findByName("Евгений");
+        });
+
+        assertEquals("Контакт с именем Евгений не найден", exception.getMessage());
+
+    }
+
 }
