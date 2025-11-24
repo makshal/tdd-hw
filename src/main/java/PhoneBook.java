@@ -41,13 +41,11 @@ public class PhoneBook {
 
     public int findByName(String name) {
 
-//        if (!nameToNumber.containsKey(name)) {
-//            throw new IllegalArgumentException("Контакт с именем " + name + " не найден");
-//        }
-//
-//        return nameToNumber.get(name);
+        if (!nameToNumber.containsKey(name)) {
+            throw new IllegalArgumentException("Контакт с именем " + name + " не найден");
+        }
 
-        return 0;
+        return nameToNumber.get(name);
 
     }
 
